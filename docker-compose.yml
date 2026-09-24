@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: gogo-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: gogo
+    ports:
+      - "5432:5432"
+    volumes:
+      - gogo_postgres:/var/lib/postgresql/data
+
+volumes:
+  gogo_postgres:
